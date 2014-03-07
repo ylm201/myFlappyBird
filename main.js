@@ -30,7 +30,11 @@ var main_state = {
 
     	this.pipes = game.add.group();  
 		this.pipes.createMultiple(20, 'pipe'); 
-		this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this);  
+		this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this); 
+
+		this.score = 0;  
+		var style = { font: "30px Arial", fill: "#ffffff" };  
+		this.label_score = this.game.add.text(20, 20, "0", style);  
 
     },
     
@@ -38,6 +42,7 @@ var main_state = {
 		// Function called 60 times per second
 		// If the bird is out of the world (too high or too low), call the 'restart_game' function
     	if (this.bird.inWorld == false) this.restart_game();
+    	this.game.physics.overlap(this.bird, this.pipes, this.restart_game, null, this);  
     },
 
     jump:function(){
@@ -57,6 +62,8 @@ var main_state = {
 	    pipe.outOfBoundsKill = true;
 	},
 	add_row_of_pipes: function() {  
+	    this.score += 1;  
+		this.label_score.content = this.score;
 	    var hole = Math.floor(Math.random()*5)+1;
 
 	    for (var i = 0; i < 8; i++)
@@ -67,6 +74,7 @@ var main_state = {
 	restart_game: function() {  
     	// Start the 'main' state, which restarts the game
     	this.game.state.start('main');
+    	this.game.time.events.remove(this.timer);  
 	}
 };
 
