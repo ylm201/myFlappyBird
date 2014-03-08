@@ -1,6 +1,5 @@
 // Initialize Phaser, and creates a 400x490px game
-
-var game = new Phaser.Game(320, 480, Phaser.AUTO, 'game_div');
+var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game_div');
 
 // Creates a new 'main' state that wil contain the game
 var main_state = {
@@ -25,8 +24,7 @@ var main_state = {
     	// Add gravity to the bird to make it fall
     	this.bird.body.gravity.y = 1000;  
 
-    	// Call the 'jump' function when tap
-
+    	// Call the 'jump' function when the spacekey is hit
     	this.game.input.onTap.add(this.jump, this);
 
     	this.pipes = game.add.group();  
@@ -74,8 +72,8 @@ var main_state = {
     // Restart the game
 	restart_game: function() {  
     	// Start the 'main' state, which restarts the game
-    	this.game.state.start('main');
-    	this.game.time.events.remove(this.timer);  
+    	//this.game.state.start('main');
+    	//this.game.time.events.remove(this.timer);  
 	}
 };
 
