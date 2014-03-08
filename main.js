@@ -19,10 +19,10 @@ var main_state = {
     create: function() { 
     	// Fuction called after 'preload' to setup the game
     	// Display the bird on the screen
-    	this.bird = this.game.add.sprite(100, 245, 'bird');
+    	this.bird = this.game.add.sprite(80, 245, 'bird');
 
     	// Add gravity to the bird to make it fall
-    	this.bird.body.gravity.y = 500;  
+    	this.bird.body.gravity.y = 300;  
 
     	// Call the 'jump' function when the spacekey is hit
     	this.game.input.onTap.add(this.jump, this);
