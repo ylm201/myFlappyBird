@@ -1,5 +1,5 @@
 // Initialize Phaser, and creates a 400x490px game
-var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game_div');
+var game = new Phaser.Game(window.screen.width, window.screen.height-80, Phaser.AUTO, 'game_div');
 
 // Creates a new 'main' state that wil contain the game
 var main_state = {
@@ -67,13 +67,13 @@ var main_state = {
 
 	    for (var i = 0; i < 8; i++)
 	        if (i != hole && i != hole +1) 
-	            this.add_one_pipe(400, i*60+10);   
+	            this.add_one_pipe(window.screen.width, i*50);   
 	},
     // Restart the game
 	restart_game: function() {  
     	// Start the 'main' state, which restarts the game
-    	//this.game.state.start('main');
-    	//this.game.time.events.remove(this.timer);  
+    	this.game.state.start('main');
+    	this.game.time.events.remove(this.timer);  
 	}
 };
 
