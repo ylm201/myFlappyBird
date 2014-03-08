@@ -55,7 +55,7 @@ var main_state = {
 	    pipe.reset(x, y);
 
 	    // Add velocity to the pipe to make it move left
-	    pipe.body.velocity.x = -80; 
+	    pipe.body.velocity.x = -150; 
 
 	    // Kill the pipe when it's no longer visible 
 	    pipe.outOfBoundsKill = true;
@@ -66,8 +66,9 @@ var main_state = {
 	    var hole = Math.floor(Math.random()*5)+1;
 
 	    for (var i = 0; i < 8; i++)
-	        if (i != hole && i != hole +1) 
-	            this.add_one_pipe(window.screen.width, i*50+10);   
+	        if (i != hole && i != hole +1){
+	            this.add_one_pipe(window.screen.width, i*51+10); 
+            }
 	},
     // Restart the game
 	restart_game: function() {  
