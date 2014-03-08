@@ -45,7 +45,7 @@ var main_state = {
     },
 
     jump:function(){
-    	this.bird.body.velocity.y = -350;
+    	this.bird.body.velocity.y = -280;
     },
     add_one_pipe: function(x, y) {  
     	// Get the first dead pipe of our group
