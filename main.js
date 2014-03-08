@@ -28,7 +28,7 @@ var main_state = {
     	this.game.input.onTap.add(this.jump, this);
 
     	this.pipes = game.add.group();  
-		this.pipes.createMultiple(20, 'pipe'); 
+		this.pipes.createMultiple(50, 'pipe'); 
 		this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this); 
 
 		this.score = 0;  
