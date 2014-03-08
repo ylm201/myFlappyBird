@@ -67,7 +67,7 @@ var main_state = {
 
 	    for (var i = 0; i < 8; i++)
 	        if (i != hole && i != hole +1) 
-	            this.add_one_pipe(window.screen.width, i*50);   
+	            this.add_one_pipe(window.screen.width, i*50+10);   
 	},
     // Restart the game
 	restart_game: function() {  
