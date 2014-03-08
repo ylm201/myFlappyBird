@@ -25,7 +25,8 @@ var main_state = {
     	this.bird.body.gravity.y = 1000;  
 
     	// Call the 'jump' function when tap
-    	var space_key = this.game.input.onTap.add(this.jump, this);
+
+    	this.game.input.onTap.add(this.jump, this);
 
     	this.pipes = game.add.group();  
 		this.pipes.createMultiple(20, 'pipe'); 
