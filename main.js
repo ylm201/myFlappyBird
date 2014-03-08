@@ -22,7 +22,7 @@ var main_state = {
     	this.bird = this.game.add.sprite(100, 245, 'bird');
 
     	// Add gravity to the bird to make it fall
-    	this.bird.body.gravity.y = 1000;  
+    	this.bird.body.gravity.y = 500;  
 
     	// Call the 'jump' function when the spacekey is hit
     	this.game.input.onTap.add(this.jump, this);
